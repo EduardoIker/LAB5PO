@@ -38,7 +38,7 @@
 			}
 			//Complejidad
 			if((complejidad.value!="1"&&complejidad.value!="2"&&complejidad.value!="3"&&complejidad.value!="4"&&complejidad.value!="5") || (complejidad.value=="")){
-				alert("Introduce un valor de complejidad v·lido (entre 1 y 5)");
+				alert("Introduce un valor de complejidad v√°lido (entre 1 y 5)");
 				return false;
 			}
             //Tema
@@ -91,7 +91,6 @@
 		
 
 		function numPreguntas(){
-				document.getElementById("div3").style.display = 'block';
 				var elCorreo= "<?php $correo=$_GET[var1]; echo $correo;?>";
 				xmlhttp = new XMLHttpRequest();
 				xmlhttp.onreadystatechange=function()
@@ -100,8 +99,7 @@
 						document.getElementById("div3").innerHTML=xmlhttp.responseText; 
 					}
 				}
-				xmlhttp.open("POST","preguntas.php?var1="+elCorreo,true);
-				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.open("GET","preguntas.php?var1="+elCorreo,true);
 				xmlhttp.send();
 			}
 
